@@ -12,7 +12,7 @@ export default defineConfig({
       '@sortViz': path.resolve(__dirname, './src/apps/sorting-visualizer'),
     },
   },
-  base: '/algo-visualizers/',
+  base: './',
   build: {
     outDir: 'dist',
   },
