@@ -1,0 +1,16 @@
+@use '/src/host/styles/theme';
+
+.iconBtn {
+  position: absolute;
+  padding: 5px;
+  cursor: pointer;
+  background-color: theme.$light;
+  border: 1px solid theme.$dark;
+  border-radius: 50%;
+  opacity: 0.5;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}

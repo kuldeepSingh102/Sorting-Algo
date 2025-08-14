@@ -1,0 +1,135 @@
+@use '/src/host/styles/theme';
+
+.controllerWrapper {
+  padding: 0 20px;
+  margin-bottom: 16px;
+
+  .controller {
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .numbers {
+      display: flex;
+      flex-basis: 80%;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      .generator {
+        display: flex;
+        flex: 1;
+        gap: 16px;
+
+        .rndmBtn {
+          flex: 1;
+          padding: 5px 10px;
+          color: theme.$light;
+          background-color: theme.$primary;
+          border: none;
+          border-radius: 4px;
+        }
+
+        .select {
+          flex: 1;
+          padding: 0 4px;
+          color: theme.$dark;
+          text-transform: capitalize;
+          background-color: theme.$light;
+          border: 1px solid theme.$shadow1;
+          border-radius: 4px;
+        }
+      }
+
+      .arrayInput {
+        flex: 2;
+        width: 100%;
+        min-width: 300px;
+        padding: 5px;
+        color: theme.$dark;
+        background-color: theme.$light;
+        border: 1px solid theme.$dark;
+        border-radius: 4px;
+      }
+
+      .arrayInput:placeholder-shown {
+        border: 1px solid transparent;
+        outline: 2px solid theme.$error;
+      }
+    }
+
+    .controls {
+      display: flex;
+      flex: 1;
+      flex-basis: 25%;
+      gap: 16px;
+      margin-top: 20px;
+
+      input[type='range'] {
+        flex: 1;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.checkboxWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+
+  .listItem {
+    list-style-type: none;
+
+    .checkbox {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+
+      > input,
+      > label {
+        cursor: pointer;
+      }
+
+      > label {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.switchContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (width >= 768px) {
+  .controllerWrapper .controller {
+    .numbers {
+      .generator,
+      .rndmBtn {
+        flex-grow: 0;
+      }
+    }
+  }
+}
+
+@media screen and (width >= 960px) {
+  .controllerWrapper .controller {
+    display: flex;
+
+    .controls {
+      margin-top: 0;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  /* stylelint-disable-next-line no-descending-specificity */
+  .controllerWrapper img {
+    filter: invert(1);
+  }
+}

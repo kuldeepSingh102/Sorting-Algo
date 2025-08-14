@@ -1,0 +1,30 @@
+@use '/src/host/styles/theme';
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 4px theme.$shadow1;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media screen and (width >= 960px) {
+  .navbar.navbar {
+    padding: 10px 10px 10px 20px;
+  }
+}
+
+[data-theme='dark'] {
+  .navbar {
+    img {
+      filter: invert(1);
+    }
+  }
+}
